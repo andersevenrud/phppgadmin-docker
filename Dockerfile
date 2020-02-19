@@ -6,7 +6,7 @@ FROM php:7-alpine
 
 LABEL description="A very basic phppgadmin docker image"
 LABEL maintainer="andersevenrud@gmail.com"
-LABEL version="7.12.0"
+LABEL version="7.12.1"
 
 ARG PGADMIN_VERSION=7.12.1
 
