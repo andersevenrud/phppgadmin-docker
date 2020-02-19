@@ -8,7 +8,7 @@ LABEL description="A very basic phppgadmin docker image"
 LABEL maintainer="andersevenrud@gmail.com"
 LABEL version="7.12.0"
 
-ARG PGADMIN_VERSION=7.12.0
+ARG PGADMIN_VERSION=7.12.1
 
 ENV PGADMIN_NAME pgadmin
 ENV PGADMIN_HOSTNAME localhost
