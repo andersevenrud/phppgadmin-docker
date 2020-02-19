@@ -1,0 +1,14 @@
+version: "3"
+services:
+  pg:
+    image: "postgres:11.0"
+    environment:
+      POSTGRES_DB: "test"
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "test"
+  phppgadmin:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
