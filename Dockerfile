@@ -22,9 +22,7 @@ RUN wget https://github.com/phppgadmin/phppgadmin/releases/download/REL_`echo "$
     tar xjvf phpPgAdmin-${PGADMIN_VERSION}.tar.bz2
 
 WORKDIR "phpPgAdmin-${PGADMIN_VERSION}"
-RUN cp conf/config.inc.php-dist conf/config.inc.php && \
-  sed -i "s/\[\'desc\'\] = \'PostgreSQL\';/[\'desc\'] = getenv(\'PGADMIN_NAME\');/g" conf/config.inc.php && \
-  sed -i "s/\[\'host\'\] = \'\';/[\'host\'] = getenv(\'PGADMIN_HOSTNAME\');/g" conf/config.inc.php && \
-  sed -i "s/\[\'port\'\] = 5432;/[\'port\'] = getenv(\'PGADMIN_PORT\');/g" conf/config.inc.php
+
+COPY config.inc.php conf/
 
 CMD php -S 0.0.0.0:8080
