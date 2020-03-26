@@ -14,7 +14,7 @@ docker run -p 8080:8080 andersevenrud/phppgadmin:latest
 
 | Port           | Usage                |
 | -------------- | -------------------- |
-| 80             | HTTP web application |
+| 8080           | HTTP web application |
 
  * This image takes theses environnements variables as parameters
 
