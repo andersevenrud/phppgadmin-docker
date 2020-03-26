@@ -53,8 +53,9 @@ services:
       POSTGRES_PASSWORD: "test"
   phppgadmin:
     build: .
-    env_file:
-      - .env
+    environment:
+      POSTGRES_HOST: test
+      POSTGRES_NAME: test
     ports:
       - 8080:8080
 ```
