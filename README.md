@@ -40,22 +40,22 @@ docker run -p 8080:8080 andersevenrud/phppgadmin:latest
 
 ## Usage with compose
 
-An example setup with docker-compose:
+An example setup with docker-compose, username postgres, password test:
 
 ```
+---
 version: "3"
 services:
-  pg:
-    image: "postgres:11.0"
+  postgres:
+    image: "postgres:12"
     environment:
-      POSTGRES_DB: "test"
-      POSTGRES_USER: "test"
-      POSTGRES_PASSWORD: "test"
+      POSTGRES_PASSWORD: test
   phppgadmin:
     build: .
     environment:
-      POSTGRES_HOST: test
-      POSTGRES_NAME: test
+      POSTGRES_HOST: postgres
+      POSTGRES_NAME: postgres
     ports:
       - 8080:8080
+...
 ```
