@@ -6,9 +6,9 @@ FROM php:7-alpine
 
 LABEL description="A very basic phppgadmin docker image"
 LABEL maintainer="andersevenrud@gmail.com"
-LABEL version="7.12.0"
+LABEL version="7.12.1"
 
-ARG PGADMIN_VERSION=7.12.0
+ARG PGADMIN_VERSION=7.12.1
 
 ENV PGADMIN_NAME pgadmin
 ENV PGADMIN_HOSTNAME localhost
@@ -22,9 +22,7 @@ RUN wget https://github.com/phppgadmin/phppgadmin/releases/download/REL_`echo "$
     tar xjvf phpPgAdmin-${PGADMIN_VERSION}.tar.bz2
 
 WORKDIR "phpPgAdmin-${PGADMIN_VERSION}"
-RUN cp conf/config.inc.php-dist conf/config.inc.php && \
-  sed -i "s/\[\'desc\'\] = \'PostgreSQL\';/[\'desc\'] = getenv(\'PGADMIN_NAME\');/g" conf/config.inc.php && \
-  sed -i "s/\[\'host\'\] = \'\';/[\'host\'] = getenv(\'PGADMIN_HOSTNAME\');/g" conf/config.inc.php && \
-  sed -i "s/\[\'port\'\] = 5432;/[\'port\'] = getenv(\'PGADMIN_PORT\');/g" conf/config.inc.php
+
+COPY config.inc.php conf/
 
 CMD php -S 0.0.0.0:8080
