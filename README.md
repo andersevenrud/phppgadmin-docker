@@ -42,7 +42,7 @@ docker run -p 8080:8080 andersevenrud/phppgadmin:latest
 
 An example setup with docker-compose, username postgres, password test:
 
-```
+```yaml
 ---
 version: "3"
 services:
