@@ -53,8 +53,8 @@ services:
   phppgadmin:
     build: .
     environment:
-      POSTGRES_HOST: postgres
-      POSTGRES_NAME: postgres
+      POSTGRES_HOST: postgres   # use POSTGRES_HOSTS for multiple databases
+      POSTGRES_NAME: postgres   # use POSTGRES_NAMES for multiple databases
     ports:
       - 8080:8080
 ...
