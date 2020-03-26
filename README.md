@@ -5,7 +5,7 @@ A very simple phppgadmin docker image that uses the latest official release (7.1
 ## Usage
 
 ```
-docker run -p 8080:8080 naturalis/phppgadmin:latest
+docker run -p 8080:8080 andersevenrud/phppgadmin:latest
 ```
 
 ### Environmental variables
